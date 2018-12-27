@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+    jupyter:
+        image: mareksyldatk/jupyter-python-latest
+        container_name: jupyter
+        ports:
+            - "8888:8888" # jupyter notebook
+        volumes:
+            - ./notebooks:/usr/notebooks
+        secrets:
+            - test_secret
+
+secrets:
+    test_secret:
+        file: ./test_secret.txt
